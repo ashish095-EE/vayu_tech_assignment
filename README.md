@@ -71,6 +71,7 @@ Solution: Used event.preventDefault() to stop default form submission.
 
 ![Screenshot (208)](https://github.com/user-attachments/assets/0804d897-6664-4cc5-bdb8-712aadd7286c)
 ![Screenshot (209)](https://github.com/user-attachments/assets/34708673-d907-4541-882e-aa739767731b)
-![Screenshot (208)](https://github.com/user-attachments/assets/5e64ee36-e369-4a6f-85cd-2ae3b995a537)
+![Screenshot (210)](https://github.com/user-attachments/assets/f5f00839-ef03-4872-ae6b-0f1bafcdf647)
+
 
 
