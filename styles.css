@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", serif;
+    color: white;
+}
+
+body {
+    background-image: url(./assets/bg.png);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100dvh;
+    backdrop-filter: blur(15px);
+}
+
+.main-container {
+    height: 600px;
+    width: 390px;
+    z-index: 1;
+    background: linear-gradient(to top, rgb(0, 0, 0, 0.15), rgb(255, 255, 255, 0.15));
+    border-radius: 12px;
+    backdrop-filter: blur(100px);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.input-city-search {
+    position: relative;
+}
+
+.city-search {
+    border-radius: 100px;
+    border: 3px solid transparent;
+    padding: 10px;
+    width: 100%;
+    background: rgb(0, 0, 0, 0.15);
+    outline: none;
+    padding-right: 45px;
+}
+
+.city-search::placeholder {
+    color: rgb(255, 255, 255, 0.75);
+}
+
+.search-btn {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.weather-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    text-align: center;
+}
+
+.location-date-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.location-container {
+    display: flex;
+    gap: 6px;
+}
+
+.location {
+    font-size: 18px;
+}
+
+.weather-image {
+    width: 120px;
+    height: 120px;
+}
+
+.weather-summary-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.temp-txt {
+    font-size: 28px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.weather-txt {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.weather-summary-info {
+    text-align: right;
+}
+
+.weather-condition-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.condition-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+}
+
+.forecast-item-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 0;
+    overflow-x: auto;
+    width: 100%;
+    scroll-snap-type: x mandatory;
+}
+
+.forecast-item-container::-webkit-scrollbar {
+    height: 4px;
+}
+
+.forecast-item-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.forecast-item-container::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 99px;
+}
+
+.forecast-items {
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    min-width: 102px;
+    padding: 8px;
+    scroll-snap-align: center;
+    transition: 0.3s;
+}
+
+.forecast-items:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.forecast-img {
+    width: 50px;
+    height: 50px;
+}
+
+.search-city-landing, .search-city-error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    text-align: center;
+   
+    margin-bottom: 30px;
+}
+
+.landing-image {
+    height: 180px;
+}
+
+.not-found-image {
+    height: 250px;
+}
+
+.unit-toggle {
+   
+    display: flex;
+    
+    gap: 10px;
+    
+    justify-content: center;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 24px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.unit-label {
+    font-size: 18px;
+    font-weight: bold;
+}

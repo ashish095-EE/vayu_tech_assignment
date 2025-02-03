@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
+    <script src="script.js" defer></script>
+    
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    
+</head>
+<body>
+
+    <main class="main-container">
+        <header class="input-city-search">
+            <input class="city-search" type="text" placeholder="Search City">
+            <button class="search-btn">
+                <span class="material-symbols-outlined">
+                    search
+                </span>
+            </button>
+        </header>
+
+        <div class="unit-toggle">
+            <label class="switch">
+                <input type="checkbox" id="unitToggle">
+                <span class="slider"></span>
+            </label>
+            <span class="unit-label">°C</span>
+        </div>
+
+        <section class="weather-info" style="display: none;">
+            <div class="location-date-container">
+                <div class="location-container">
+                    <span class="material-symbols-outlined">
+                        location_on
+                    </span>
+                    <h4 class="country">India</h4>
+                    <h4 class="city"> <span></span></h4>
+
+                </div>
+                <div class="current-date">
+                    Thu,04 Aug
+                </div>
+                
+            </div>
+
+            <div class="weather-summary-container">
+                <img src="./assets/weather/thunderstorm.png" alt="" class="weather-image">
+                <div class="weather-summary-info">
+                    <h1 class="temp-txt">29 ℃ </h1>
+                    <p style="font-style: italic; font-size: 12px;">feels like <span class="feels-like">23 ℃</span></p>
+                    <p class="weather-txt">Cloudy</p>
+                </div>
+            </div>
+
+            <div class="weather-condition-container">
+                <div class="conditon-info">
+                    <span class="material-symbols-outlined">
+                        water_drop
+                    </span>
+                    <div class="conditon-name-data">
+                        <p class="condtion-txt">Humidity</p>
+                        <p class="condition-humidity-value">55 %</p>
+
+                    </div>
+                    
+                </div>
+                <div class="conditon-info">
+                    <span class="material-symbols-outlined">
+                        compress
+                    </span>
+                    <div class="conditon-name-data">
+                        <p class="condtion-txt">Pressure</p>
+                        <p class="condition--pressure-value">5 atm</p>
+
+                    </div>
+                    
+                </div>
+                <div class="conditon-info">
+                    <span class="material-symbols-outlined">
+                        air
+                    </span>
+                    <div class="conditon-name-data">
+                        <p class="condtion-txt">Wind Speed</p>
+                        <p class="condition-wind-value">5 M/s</p>
+
+                    </div>
+                    
+                </div>
+               
+            </div>
+            <div class="forecast-item-container">
+                <div class="forecast-items">
+                    <h5 class="forecast-item-date">05 Aug</h5>
+                    <img src="./assets/weather/cloudy-day.png" alt="" class="forecast-img">
+                    <h5 class="forecast-item-temp">29 ℃</h5>
+                </div>
+                <div class="forecast-items">
+                    <h5 class="forecast-item-date">05 Aug</h5>
+                    <img src="./assets/weather/cloudy-day.png" alt="" class="forecast-img">
+                    <h5 class="forecast-item-temp">29 ℃</h5>
+                </div>
+                <div class="forecast-items">
+                    <h5 class="forecast-item-date">05 Aug</h5>
+                    <img src="./assets/weather/cloudy-day.png" alt="" class="forecast-img">
+                    <h5 class="forecast-item-temp">29 ℃</h5>
+                </div>
+                <div class="forecast-items">
+                    <h5 class="forecast-item-date">05 Aug</h5>
+                    <img src="./assets/weather/cloudy-day.png" alt="" class="forecast-img">
+                    <h5 class="forecast-item-temp">29 ℃</h5>
+                </div>
+                <div class="forecast-items">
+                    <h5 class="forecast-item-date">05 Aug</h5>
+                    <img src="./assets/weather/cloudy-day.png" alt="" class="forecast-img">
+                    <h5 class="forecast-item-temp">29 ℃</h5>
+                </div>
+                <div class="forecast-items">
+                    <h5 class="forecast-item-date">05 Aug</h5>
+                    <img src="./assets/weather/cloudy-day.png" alt="" class="forecast-img">
+                    <h5 class="forecast-item-temp">29 ℃</h5>
+                </div>
+                <div class="forecast-items">
+                    <h5 class="forecast-item-date">05 Aug</h5>
+                    <img src="./assets/weather/cloudy-day.png" alt="" class="forecast-img">
+                    <h5 class="forecast-item-temp">29 ℃</h5>
+                </div>
+                <div class="forecast-items">
+                    <h5 class="forecast-item-date">05 Aug</h5>
+                    <img src="./assets/weather/cloudy-day.png" alt="" class="forecast-img">
+                    <h5 class="forecast-item-temp">29 ℃</h5>
+                </div>
+                
+            </div>
+        </section>
+
+        <section class="search-city-landing">
+            <img src="./assets/weather.png" alt="" class="landing-image">
+            <div>
+                <h1>Search City</h1>
+                <h4 class="regular-text">
+                    Find out the weather condition of your city
+                </h4>
+            </div>
+        </section>
+
+        <section class="search-city-error" style="display: none;">
+            <img src="./assets/errorimage.png" alt="" class="not-found-image">
+            <div>
+                <h1>City Not Found</h1>
+                <h4 class="regular-text">
+                    Cannot fetch data for the city mentioned in search
+                </h4>
+            </div>
+        </section>
+    </main>
+    
+</body>
+</html>
